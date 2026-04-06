@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom Stacks Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #e5e7eb;
+      --accent: #38bdf8;
+      --muted: #9ca3af;
+      --card: #020617;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .intro {
+      margin-bottom: 2.5rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 800px) {
+      .stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .stack-card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.85));
+      border-radius: 0.9rem;
+      padding: 1.5rem 1.4rem 1.6rem;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow:
+        0 18px 45px rgba(15,23,42,0.9),
+        0 0 0 1px rgba(15,23,42,0.8);
+    }
+
+    .stack-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .stack-tag span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(56,189,248,0.9);
+    }
+
+    .stack-card h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.25rem;
+    }
+
+    .stack-subtitle {
+      margin: 0 0 0.9rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .stack-line {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .stack-line strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .stack-list-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin: 0.9rem 0 0.25rem;
+    }
+
+    .stack-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .stack-list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Custom Stack Collection</h1>
+      <p>Four opinionated stacks, each with a clear identity and purpose.</p>
+    </header>
+
+    <section class="intro">
+      <p>
+        This page presents four custom‑designed stacks, each built around a distinct philosophy of modern web
+        development. Instead of forcing one “universal” setup, these stacks embrace the idea that different
+        problems deserve different tools. Use this page as a reference after landing on the home page, to decide
+        which stack best fits the project you’re about to build.
+      </p>
+    </section>
+
+    <section class="stack-grid">
+      <!-- LMHV / Feather Stack -->
+      <article class="stack-card" id="lmhv">
+        <div class="stack-tag"><span></span>Feather Stack</div>
+        <h2>LMHV Stack</h2>
+        <p class="stack-subtitle">Laravel • MySQL • htmx • Vite</p>
+
+        <p class="stack-line">
+          <strong>Identity:</strong> A lightweight, server‑driven stack with minimal JavaScript and fast iteration.
+        </p>
+
+        <p class="stack-list-title">Best for</p>
+        <ul class="stack-list">
+          <li>CRUD apps and admin dashboards</li>
+          <li>Internal tools and back‑office interfaces</li>
+          <li>Projects where SEO, speed, and simplicity matter</li>
+        </ul>
+
+        <p class="stack-list-title">Why it works</p>
+        <ul class="stack-list">
+          <li>Laravel handles routing, auth, and data logic</li>
+          <li>htmx adds interactivity via HTML attributes instead of heavy SPA frameworks</li>
+          <li>Vite provides fast asset bundling; MySQL offers a stable relational core</li>
+        </ul>
+      </article>
+
+      <!-- NPHS -->
+      <article class="stack-card" id="nphs">
+        <div class="stack-tag"><span></span>Nuxt SSR Stack</div>
+        <h2>NPHS Stack</h2>
+        <p class="stack-subtitle">Nuxt • PostgreSQL/Prisma • PostCSS • HTML • Sass</p>
+
+        <p class="stack-line">
+          <strong>Identity:</strong> A Vue‑powered SSR stack for content‑rich, design‑driven applications.
+        </p>
+
+        <p class="stack-list-title">Best for</p>
+        <ul class="stack-list">
+          <li>SEO‑heavy sites, blogs, portfolios, marketing pages</li>
+          <li>Hybrid SSR/SSG experiences</li>
+          <li>Projects where layout and visual polish matter</li>
+        </ul>
+
+        <p class="stack-list-title">Why it works</p>
+        <ul class="stack-list">
+          <li>Nuxt delivers SSR/SSG for performance and SEO</li>
+          <li>Prisma + PostgreSQL provide a modern, type‑safe backend</li>
+          <li>Sass + PostCSS form a powerful, maintainable CSS pipeline</li>
+        </ul>
+      </article>
+
+      <!-- VPTNV -->
+      <article class="stack-card" id="vptnv">
+        <div class="stack-tag"><span></span>TypeScript Full‑Stack</div>
+        <h2>VPTNV Stack</h2>
+        <p class="stack-subtitle">Vue • Prisma • TypeScript • Node • Vite</p>
+
+        <p class="stack-line">
+          <strong>Identity:</strong> A clean, fully type‑safe full‑stack architecture built around TypeScript.
+        </p>
+
+        <p class="stack-list-title">Best for</p>
+        <ul class="stack-list">
+          <li>SaaS products and dashboards</li>
+          <li>Complex SPAs and data‑driven interfaces</li>
+          <li>Teams that value type safety and long‑term maintainability</li>
+        </ul>
+
+        <p class="stack-list-title">Why it works</p>
+        <ul class="stack-list">
+          <li>TypeScript runs through backend and frontend for consistent types</li>
+          <li>Prisma offers type‑safe database access on top of PostgreSQL</li>
+          <li>Vue + Vite provide a fast, modern frontend workflow</li>
+        </ul>
+      </article>
+
+      <!-- 3T4VPeX -->
+      <article class="stack-card" id="3t4vpex">
+        <div class="stack-tag"><span></span>Maximal TS Ecosystem</div>
+        <h2>3T4VPeX Stack</h2>
+        <p class="stack-subtitle">TypeScript • tRPC • Tailwind • Vue • Vite • Vitest • Prisma • Express</p>
+
+        <p class="stack-line">
+          <strong>Identity:</strong> A feature‑rich, TypeScript‑centric stack for ambitious, complex applications.
+        </p>
+
+        <p class="stack-list-title">Best for</p>
+        <ul class="stack-list">
+          <li>Large‑scale apps with complex frontends</li>
+          <li>Real‑time or highly interactive interfaces</li>
+          <li>Teams that want deep control over both backend and frontend</li>
+        </ul>
+
+        <p class="stack-list-title">Why it works</p>
+        <ul class="stack-list">
+          <li>tRPC enables end‑to‑end type‑safe communication</li>
+          <li>Tailwind accelerates UI building with utility‑first CSS</li>
+          <li>Express + Prisma + PostgreSQL form a flexible, powerful backend</li>
+          <li>Vite + Vitest provide modern tooling and testing for Vue + TS</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>
+      <p>
+        Return to the <a href="/">home page</a> to choose a stack or start a new project.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
